@@ -1,5 +1,9 @@
 name: native_device_orientation_example
 description: Demonstrates how to use the native_device_orientation plugin.
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
 
 publish_to: 'none'
 

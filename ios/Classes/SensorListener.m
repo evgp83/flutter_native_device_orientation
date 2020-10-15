@@ -18,6 +18,9 @@
         
         [motionManager startDeviceMotionUpdatesToQueue:[NSOperationQueue mainQueue] withHandler:^(CMDeviceMotion *data, NSError *error) {
             NSString *orientation;
+            if (fabs(data.gravity.x) < 0.4 && fabs(data.gravity.y) < 0.4) {
+                return;
+            }            
             if(fabs(data.gravity.x)>fabs(data.gravity.y)){
                 // we are in landscape-mode
                 if(data.gravity.x>=0){
